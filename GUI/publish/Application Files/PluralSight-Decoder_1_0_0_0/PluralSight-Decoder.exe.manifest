@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="PluralSight-Decoder.exe" version="1.0.0.0" publicKeyToken="587baeb61f7c4064" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="PS.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="PluralSight-Decoder" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="PluralSight-Decoder.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Decoder.dll" size="28160">
+      <assemblyIdentity name="Decoder" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>9zVfSuozk/3cOsYtSjPEPqfo3QxKG+jgKcsFYzM31UU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MetroFramework.dll" size="152576">
+      <assemblyIdentity name="MetroFramework" version="1.2.0.3" publicKeyToken="5F91A84759BF584A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>uvMm9S05FV1yJGWUf0zGfm6Qz9D4mVTquVlWjpvDQqo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MetroFramework.Fonts.dll" size="672256">
+      <assemblyIdentity name="MetroFramework.Fonts" version="1.2.0.3" publicKeyToken="5F91A84759BF584A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>6WAw/dr354QBVn7oJICtde5I01VhmaP4XA7Gae2sLvQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PluralSight-Decoder.exe" size="48600">
+      <assemblyIdentity name="PluralSight-Decoder" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>54sFOccpuuId3DMNsDoZC5BqfyJiW6PSYDnGjnez/PU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.dll" size="356352">
+      <assemblyIdentity name="System.Data.SQLite" version="1.0.113.0" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ek3elItXO1qSyx9joiAQBuYeokEH2WaKNu+jeOjUjwg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Transitions.dll" size="17408">
+      <assemblyIdentity name="Transitions" version="1.2.1.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>qWMPevMP4zMr45fH67NJL+LAEapRIG5afPjaQfIH2Fo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="MetroFramework.txt" size="1266">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>+yV6adEVlpUIOiH/IdsfqaixKo0MB7DiB/hBOyI4wKw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PluralSight-Decoder.exe.config" size="804">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>MpbylMaLAisTNmgu0gXVf4bpFKSoWYXUBkuT/rTIhMs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PS.ico" size="28352">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>IVbTk/HapcDPU9ymXM4BGQHf05xDICoM+mh5mI8+ytg=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=SHECHTERILT\teolocal" issuerKeyHash="92e9449c8c4f70cfc5260a92a91c252b4afc4bfb" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>jPI2acluH41gnKOwLc/l58ZJtV1EdSctWRRUe0/PBc4=</DigestValue></Reference></SignedInfo><SignatureValue>MVRKEgotpS5HwMkZloJbVFm7pSQyIO5x1IODOSXaUh5vcl2j/7cdEjtKCnXBReaL2ii+kOMhpqrjsKohLYobM0VZlljwJuOYjTmQvz70Aiy+AcXjHWvsdxrb1ly9FKX/UZp/NIqCNq05t8+CUsfL57+j/9dOryn4hmxUmsxi6LQ=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>wd6m610y6dx93jRvj+vkLMwQz4gWJA2OZ/Cd4JpbOYGxcj7ZABa6cYkWMYFHpkzHRuQHgYdjKpfoY+gdM7f5jY2Ozr90XufUOp80qdlQHFe2zEIYxleaVPZPH5fk73iMAKtGNkqkQ1vh2xdk1UuzibwHArNViD63jewNkpRu2PE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="ce05cf4f7b5414592d2775445db549c6e7e5cf2db0a39c608d1f6ec96936f28c" Description="" Url=""><as:assemblyIdentity name="PluralSight-Decoder.exe" version="1.0.0.0" publicKeyToken="587baeb61f7c4064" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=SHECHTERILT\teolocal</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>/+jil4s6pZAl9xOSfRMLLWwrC4hOGBK7uF0eQpyfcFk=</DigestValue></Reference></SignedInfo><SignatureValue>ZCgwF2fLKJOv21WqiEBYlaym9rmZ0klzgcu8pp63uRSHGP3ygXuICo4rKvFJCEeoIutgoYdXnlremJHtxaLaTq/lddj1jKHQxLW1Y4UtocXZ8hO73YCgDNMvN/W5ha+T4qgCWFEZzm20npHKmW1uFLCl+mSbHDDX/rMzemVvS5g=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>wd6m610y6dx93jRvj+vkLMwQz4gWJA2OZ/Cd4JpbOYGxcj7ZABa6cYkWMYFHpkzHRuQHgYdjKpfoY+gdM7f5jY2Ozr90XufUOp80qdlQHFe2zEIYxleaVPZPH5fk73iMAKtGNkqkQ1vh2xdk1UuzibwHArNViD63jewNkpRu2PE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB6TCCAVKgAwIBAgIQG2cXKLnnypBEuLG3Ke5KTzANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDHigAUwBIAEUAQwBIAFQARQBSAEkATABUAFwAdABlAG8AbABvAGMAYQBsMB4XDTIwMTAxNDEwNTI0MFoXDTIxMTAxNDE2NTI0MFowMzExMC8GA1UEAx4oAFMASABFAEMASABUAEUAUgBJAEwAVABcAHQAZQBvAGwAbwBjAGEAbDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAwd6m610y6dx93jRvj+vkLMwQz4gWJA2OZ/Cd4JpbOYGxcj7ZABa6cYkWMYFHpkzHRuQHgYdjKpfoY+gdM7f5jY2Ozr90XufUOp80qdlQHFe2zEIYxleaVPZPH5fk73iMAKtGNkqkQ1vh2xdk1UuzibwHArNViD63jewNkpRu2PECAwEAATANBgkqhkiG9w0BAQsFAAOBgQBUIsiJWPTS4eAZJ7bd15qaAdLkyemL2W2TA4qCX+Jrln5ad54noTY8ed8lc5ogSQe3iyj5YgloVlBwDFpCBn2Q+JQSpZrxme7uJjZ+Fh9sXuCZ3CbXOc/GdJRQm386xZBcsnGG1BpSkadDgNiA5enmpLUeQ+dZnsJCVWNzpMHfBw==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
