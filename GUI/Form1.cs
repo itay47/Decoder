@@ -19,7 +19,9 @@ namespace GUI
 
         private string psPath;
         private string outputPath;
-        
+
+        private const string BaseFolder = @"\AppData\Local\Pluralsight";
+
         public Form1()
         {
             InitializeComponent();
@@ -31,11 +33,22 @@ namespace GUI
             
             this.ShadowType = MetroFormShadowType.AeroShadow;
 
+            psPath = GetDefaultpsPath();
+
             Transitions.Transition iTransition = new Transitions.Transition(new Transitions.TransitionType_Deceleration(1000));
 
             iTransition.add(this.metroTabControl1, "Left", this.Width - 777);
             iTransition.add(this.metroPanel2, "Top", this.Height - 422);
             iTransition.run();
+        }
+
+        private string GetDefaultpsPath()
+        {
+            string PsDefault = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                    BaseFolder
+                    );
+            return PsDefault;
         }
 
         private void metroToggle1_CheckedChanged(object sender, EventArgs e)
@@ -47,7 +60,10 @@ namespace GUI
         {
             using (var iDialog = new OpenFileDialog())
             {
-                iDialog.InitialDirectory = "C:\\";
+                iDialog.InitialDirectory = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                    BaseFolder
+                    );
 
                 iDialog.ValidateNames = false;
                 iDialog.CheckFileExists = false;
