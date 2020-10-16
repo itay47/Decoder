@@ -17,6 +17,8 @@ namespace Decoder.Option
         {
             lock (console_lock)
             {
+                
+
                 Console.ForegroundColor = color;
                 Console.WriteLine(Text);
                 if (bNewLine) Console.WriteLine(Environment.NewLine);

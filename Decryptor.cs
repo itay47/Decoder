@@ -31,6 +31,11 @@ namespace Decoder
         private SemaphoreSlim Semaphore = new SemaphoreSlim(5);
         private object SemaphoreLock = new object();
 
+        private string Current_Course { get; set; }
+        private int Courses_Completed_Count { get; set; } = 0;
+        private int Courses_Count { get; set; } = 0;
+
+
         #endregion Fields
 
         /// <summary>
@@ -109,8 +114,11 @@ namespace Decoder
                 }
             }
 
+            string[] xcourses = Directory.GetDirectories(folderPath, "*", SearchOption.TopDirectoryOnly);
+            Courses_Count = xcourses.Length;
+
             foreach (string coursePath in Directory.GetDirectories(folderPath, "*",
-                SearchOption.TopDirectoryOnly))
+                    SearchOption.TopDirectoryOnly))
             {
                 var course = GetCourseFromDb(coursePath);
 
@@ -146,6 +154,8 @@ namespace Decoder
 
                     if (listModules.Count > 0)
                     {
+                        SetCurrentCourse(course.CourseTitle);
+
                         // Get each module
                         foreach (Module module in listModules)
                         {
@@ -174,6 +184,7 @@ namespace Decoder
 
                                 // Decrypt all videos in current module folder
                                 await Task.Run(() => DecryptAllVideos(moduleHashPath, module, moduleInfo.FullName));
+
                             }
                             else
                             {
@@ -182,13 +193,44 @@ namespace Decoder
                                     " cannot be found in the current course path.",
                                     ConsoleColor.Red);
 
-                                
+
                             }
                         }
+                        Courses_Completed_Count++;
                     }
+                    
                     WriteToConsole("Decryption " + course.CourseTitle + " has been completed!", ConsoleColor.Magenta);
                 }
+                //remove Course from DB
+                if (Options.RemoveFolderAfterDecryption)
+                {
+                    await Task.Run(() => RemoveCourseInDb(coursePath));
+                }
+                //Remove course from disk
+                if (Options.RemoveFolderAfterDecryption)
+                {
+                    await Task.Run(() => RemoveCourseInDisk(coursePath));
+                }
             }
+        }
+
+        private void SetCurrentCourse(string courseTitle)
+        {
+            this.Current_Course = courseTitle;
+        }
+
+        public async Task<string> GetCurrentCourseTitle()
+        {
+            return await Task.FromResult(this.Current_Course);
+        }
+
+        public async Task<int> GetCourseCount()
+        {
+            return await Task.FromResult(this.Courses_Count);
+        }
+        public async Task<int> GetCourse_Completed_Decrypt()
+        {
+            return await Task.FromResult(this.Courses_Completed_Count);
         }
 
         public bool RemoveCourseInDb(string coursePath)

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -47,10 +48,16 @@
             this.createSubsCheckbox = new MetroFramework.Controls.MetroCheckBox();
             this.useOutputFolderCheckbox = new MetroFramework.Controls.MetroCheckBox();
             this.useDatabaseCheckbox = new MetroFramework.Controls.MetroCheckBox();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroToggle2 = new MetroFramework.Controls.MetroToggle();
+            this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.metroPanel2.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.downloadTab.SuspendLayout();
+            this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroToggle1
@@ -92,7 +99,7 @@
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(574, 23);
+            this.metroPanel2.Location = new System.Drawing.Point(574, 28);
             this.metroPanel2.Name = "metroPanel2";
             this.metroPanel2.Size = new System.Drawing.Size(200, 29);
             this.metroPanel2.TabIndex = 5;
@@ -111,6 +118,9 @@
             // 
             // downloadTab
             // 
+            this.downloadTab.Controls.Add(this.metroLabel7);
+            this.downloadTab.Controls.Add(this.metroTextBox3);
+            this.downloadTab.Controls.Add(this.metroPanel1);
             this.downloadTab.Controls.Add(this.metroLabel5);
             this.downloadTab.Controls.Add(this.metroProgressSpinner1);
             this.downloadTab.Controls.Add(this.metroButton1);
@@ -135,13 +145,13 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(93, 168);
+            this.metroLabel5.Location = new System.Drawing.Point(5, 193);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(78, 19);
             this.metroLabel5.TabIndex = 15;
-            this.metroLabel5.Text = "metroLabel5";
+            this.metroLabel5.Text = "Course Title";
             this.metroLabel5.UseStyleColors = true;
-            this.metroLabel5.Visible = false;
+            this.metroLabel5.Click += new System.EventHandler(this.metroLabel5_Click);
             // 
             // metroProgressSpinner1
             // 
@@ -203,17 +213,18 @@
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel2.Location = new System.Drawing.Point(1, 13);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(175, 25);
+            this.metroLabel2.Size = new System.Drawing.Size(243, 25);
             this.metroLabel2.TabIndex = 9;
-            this.metroLabel2.Text = "Pluralsight Directory:";
+            this.metroLabel2.Text = "Pluralsight Courses Directory:";
             this.metroLabel2.UseStyleColors = true;
             // 
             // metroTextBox1
             // 
+            this.metroTextBox1.Enabled = false;
             this.metroTextBox1.Location = new System.Drawing.Point(3, 44);
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.ReadOnly = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(281, 23);
+            this.metroTextBox1.Size = new System.Drawing.Size(131, 23);
             this.metroTextBox1.TabIndex = 8;
             this.metroTextBox1.Text = "Choose Path";
             this.metroTextBox1.Click += new System.EventHandler(this.metroTextBox1_Click);
@@ -264,6 +275,70 @@
             this.useDatabaseCheckbox.Text = "Use Database";
             this.useDatabaseCheckbox.UseVisualStyleBackColor = true;
             // 
+            // metroPanel1
+            // 
+            this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroPanel1.BackColor = System.Drawing.Color.White;
+            this.metroPanel1.Controls.Add(this.metroLabel6);
+            this.metroPanel1.Controls.Add(this.metroToggle2);
+            this.metroPanel1.CustomBackground = true;
+            this.metroPanel1.HorizontalScrollbar = true;
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(164, 44);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(263, 29);
+            this.metroPanel1.TabIndex = 16;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.BackColor = System.Drawing.Color.White;
+            this.metroLabel6.Location = new System.Drawing.Point(3, 4);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(172, 19);
+            this.metroLabel6.TabIndex = 4;
+            this.metroLabel6.Text = "Courses is on different path:";
+            this.metroLabel6.Click += new System.EventHandler(this.metroLabel6_Click);
+            // 
+            // metroToggle2
+            // 
+            this.metroToggle2.AutoSize = true;
+            this.metroToggle2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.metroToggle2.Location = new System.Drawing.Point(183, 0);
+            this.metroToggle2.Name = "metroToggle2";
+            this.metroToggle2.Size = new System.Drawing.Size(80, 29);
+            this.metroToggle2.TabIndex = 3;
+            this.metroToggle2.Text = "Off";
+            this.metroToggle2.UseVisualStyleBackColor = true;
+            this.metroToggle2.CheckedChanged += new System.EventHandler(this.metroToggle2_CheckedChanged);
+            // 
+            // metroTextBox3
+            // 
+            this.metroTextBox3.Location = new System.Drawing.Point(280, 184);
+            this.metroTextBox3.Name = "metroTextBox3";
+            this.metroTextBox3.Size = new System.Drawing.Size(268, 23);
+            this.metroTextBox3.TabIndex = 17;
+            this.metroTextBox3.Text = "metroTextBox3";
+            this.metroTextBox3.Visible = false;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(132, 171);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(78, 19);
+            this.metroLabel7.TabIndex = 18;
+            this.metroLabel7.Text = "Completed:";
+            this.metroLabel7.UseStyleColors = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,6 +346,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.metroPanel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Resizable = false;
             this.Text = "PluralSight Downloader";
@@ -280,6 +356,8 @@
             this.metroTabControl1.ResumeLayout(false);
             this.downloadTab.ResumeLayout(false);
             this.downloadTab.PerformLayout();
+            this.metroPanel1.ResumeLayout(false);
+            this.metroPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -303,6 +381,11 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner1;
         private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroToggle metroToggle2;
+        private MetroFramework.Controls.MetroTextBox metroTextBox3;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
     }
 }
 
