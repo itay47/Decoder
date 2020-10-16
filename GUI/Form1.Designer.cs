@@ -48,11 +48,11 @@
             this.createSubsCheckbox = new MetroFramework.Controls.MetroCheckBox();
             this.useOutputFolderCheckbox = new MetroFramework.Controls.MetroCheckBox();
             this.useDatabaseCheckbox = new MetroFramework.Controls.MetroCheckBox();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroToggle2 = new MetroFramework.Controls.MetroToggle();
             this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.metroPanel2.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
@@ -118,9 +118,9 @@
             // 
             // downloadTab
             // 
+            this.downloadTab.Controls.Add(this.metroPanel1);
             this.downloadTab.Controls.Add(this.metroLabel7);
             this.downloadTab.Controls.Add(this.metroTextBox3);
-            this.downloadTab.Controls.Add(this.metroPanel1);
             this.downloadTab.Controls.Add(this.metroLabel5);
             this.downloadTab.Controls.Add(this.metroProgressSpinner1);
             this.downloadTab.Controls.Add(this.metroButton1);
@@ -139,7 +139,7 @@
             this.downloadTab.Name = "downloadTab";
             this.downloadTab.Size = new System.Drawing.Size(743, 325);
             this.downloadTab.TabIndex = 0;
-            this.downloadTab.Text = "Download";
+            this.downloadTab.Text = "Decrypt";
             this.downloadTab.VerticalScrollbarBarColor = true;
             // 
             // metroLabel5
@@ -275,33 +275,12 @@
             this.useDatabaseCheckbox.Text = "Use Database";
             this.useDatabaseCheckbox.UseVisualStyleBackColor = true;
             // 
-            // metroPanel1
-            // 
-            this.metroPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroPanel1.BackColor = System.Drawing.Color.White;
-            this.metroPanel1.Controls.Add(this.metroLabel6);
-            this.metroPanel1.Controls.Add(this.metroToggle2);
-            this.metroPanel1.CustomBackground = true;
-            this.metroPanel1.HorizontalScrollbar = true;
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(164, 44);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(263, 29);
-            this.metroPanel1.TabIndex = 16;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
             // metroLabel6
             // 
             this.metroLabel6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.BackColor = System.Drawing.Color.White;
-            this.metroLabel6.Location = new System.Drawing.Point(3, 4);
+            this.metroLabel6.Location = new System.Drawing.Point(5, 4);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(172, 19);
             this.metroLabel6.TabIndex = 4;
@@ -310,11 +289,11 @@
             // 
             // metroToggle2
             // 
+            this.metroToggle2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.metroToggle2.AutoSize = true;
-            this.metroToggle2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.metroToggle2.Location = new System.Drawing.Point(183, 0);
+            this.metroToggle2.Location = new System.Drawing.Point(183, 6);
             this.metroToggle2.Name = "metroToggle2";
-            this.metroToggle2.Size = new System.Drawing.Size(80, 29);
+            this.metroToggle2.Size = new System.Drawing.Size(80, 17);
             this.metroToggle2.TabIndex = 3;
             this.metroToggle2.Text = "Off";
             this.metroToggle2.UseVisualStyleBackColor = true;
@@ -339,6 +318,21 @@
             this.metroLabel7.Text = "Completed:";
             this.metroLabel7.UseStyleColors = true;
             // 
+            // metroPanel1
+            // 
+            this.metroPanel1.Controls.Add(this.metroLabel6);
+            this.metroPanel1.Controls.Add(this.metroToggle2);
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(149, 42);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(274, 31);
+            this.metroPanel1.TabIndex = 19;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,7 +343,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Resizable = false;
-            this.Text = "PluralSight Downloader";
+            this.Text = "PluralSight Decrypter";
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
@@ -381,11 +375,11 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner1;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroToggle metroToggle2;
         private MetroFramework.Controls.MetroTextBox metroTextBox3;
         private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
     }
 }
 
