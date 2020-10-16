@@ -18,7 +18,7 @@ You need to have PS Offline Player.
 
 
 # Screenshot
-![Image of GUI](https://i.imgur.com/JgcVJ0k.png)
+![Image of GUI](https://i.imgur.com/oUhzkF3.png)
 
 # Contributing
 Feel free to contribute to this project and tweak it to your liking.
