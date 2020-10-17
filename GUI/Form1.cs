@@ -177,6 +177,7 @@ namespace GUI
                     this.metroLabel5.Text = "The decryption has been completed!";
                     this.metroLabel5.Visible = true;
 
+                    ChangeCurrentCourse("", await iDecryptor.GetCourse_Completed_Decrypt(), await iDecryptor.GetCourseCount());
                     await setTimeout( this.metroLabel5,this.metroButton1, 3000);
                     this.timer.Stop();
 
@@ -190,6 +191,7 @@ namespace GUI
 
                 Task.Factory.StartNew(async () =>
                 {
+                    ChangeCurrentCourse("", await iDecryptor.GetCourse_Completed_Decrypt(), await iDecryptor.GetCourseCount());
                     await setTimeout(this.metroLabel5, this.metroButton1, 3000);
                 });
             }
@@ -204,7 +206,7 @@ namespace GUI
             {
                 iLabel.Visible = false;
 
-                iButton.Enabled = true; ;
+                iButton.Enabled = true;
             };
 
             await Task.Run( () => iTimer.Start());
