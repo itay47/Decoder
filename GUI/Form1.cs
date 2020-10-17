@@ -34,7 +34,7 @@ namespace GUI
             InitializeComponent();
             iDecryptor = new Decoder.Decryptor();
             FistRun = true;
-            this.timer = new System.Timers.Timer(1000);
+            this.timer = new System.Timers.Timer(500);
             timer.Elapsed += Timer_Elapsed;
             
             this.metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -172,12 +172,13 @@ namespace GUI
 
                     // task decrypt PS videos
                     await iDecryptor.DecryptAllFolders(iDecryptorOptions.InputPath, iDecryptorOptions.OutputPath);
-                    this.timer.Stop();
+                    
                     this.metroProgressSpinner1.Visible = false;
                     this.metroLabel5.Text = "The decryption has been completed!";
                     this.metroLabel5.Visible = true;
 
                     await setTimeout( this.metroLabel5,this.metroButton1, 3000);
+                    this.timer.Stop();
 
                 }, TaskCreationOptions.LongRunning);
             }
