@@ -212,6 +212,8 @@ namespace Decoder
                     await Task.Run(() => RemoveCourseInDisk(coursePath));
                 }
             }
+            if (Courses_Completed_Count < Courses_Count)
+                Courses_Completed_Count = Courses_Count;
         }
 
         private void SetCurrentCourse(string courseTitle)

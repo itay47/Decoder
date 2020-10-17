@@ -25,11 +25,15 @@ namespace GUI
         private const string BaseFolder = "Pluralsight";
         private System.Timers.Timer timer;
         private Decoder.Option.DecryptorOptions iDecryptorOptions;
+        private bool FistRun = true;
+
+
         Decoder.Decryptor iDecryptor;
         public Form1()
         {
             InitializeComponent();
             iDecryptor = new Decoder.Decryptor();
+            FistRun = true;
             this.timer = new System.Timers.Timer(1000);
             timer.Elapsed += Timer_Elapsed;
             
@@ -129,6 +133,10 @@ namespace GUI
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
+            metroButton1.Enabled = false;
+
+            Invoke((MethodInvoker)(() => this.metroLabel7.Text = "Completed:"));
+
             if (!string.IsNullOrWhiteSpace(this.outputPath) && !string.IsNullOrWhiteSpace(this.psPath))
             {
                 iDecryptorOptions = new Decoder.Option.DecryptorOptions();
@@ -156,6 +164,8 @@ namespace GUI
                 iDecryptor = new Decoder.Decryptor(iDecryptorOptions);
 
                 this.metroProgressSpinner1.Visible = true;
+                
+                timer.Start();
 
                 Task.Factory.StartNew(async () =>
                 {
@@ -167,7 +177,7 @@ namespace GUI
                     this.metroLabel5.Text = "The decryption has been completed!";
                     this.metroLabel5.Visible = true;
 
-                    await setTimeout(this.metroLabel5, 3000);
+                    await setTimeout( this.metroLabel5,this.metroButton1, 3000);
 
                 }, TaskCreationOptions.LongRunning);
             }
@@ -179,12 +189,12 @@ namespace GUI
 
                 Task.Factory.StartNew(async () =>
                 {
-                    await setTimeout(this.metroLabel5, 3000);
+                    await setTimeout(this.metroLabel5, this.metroButton1, 3000);
                 });
             }
         }
 
-        public static async Task setTimeout(MetroFramework.Controls.MetroLabel iLabel, long iTime)
+        public static async Task setTimeout(MetroFramework.Controls.MetroLabel iLabel, MetroFramework.Controls.MetroButton iButton, long iTime)
         {
             var iTimer = new System.Timers.Timer();
             iTimer.Interval = iTime;
@@ -192,6 +202,8 @@ namespace GUI
             iTimer.Elapsed += (iSeconds, en) =>
             {
                 iLabel.Visible = false;
+
+                iButton.Enabled = true; ;
             };
 
             await Task.Run( () => iTimer.Start());
